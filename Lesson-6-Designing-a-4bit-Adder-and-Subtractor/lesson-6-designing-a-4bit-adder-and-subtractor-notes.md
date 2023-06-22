@@ -47,7 +47,7 @@ Next for the sum bit which turns out to be not quite straightforward as the carr
 
 **OR** and **NAND** logic gates are close what we want to except for sum bit case. So let's connect both an **OR** gate and **NAND** to the same inputs:
 
-<img src="/assets/or_nand.png" width="200" height="100">
+<img src="assets/or_nand.png" width="200" height="100">
 
 
 
