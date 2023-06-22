@@ -22,11 +22,32 @@ When adding decimal numbers, we typically rely on a more complex addition table 
 
 We add two binary numbers column by column beginning with the rightmost column:
 
-<div style="width:fit-content; padding-bottom: 2px">
 <div style="text-indent: 13px"> 01100101</div>
 <div>+  10110110</div>
-</div>
+-------------
 <div style="margin-left: 5px; padding-top: 2px">100011011</div> 
+
+There is a connection between logic gates and binary addition. Let's look at the table of the carry bit:
+| carry | 0 | 1 |
+| :---        |    :----:   |          ---: |
+| 0 | 0 | 0 |
+| 1 | 0 | 1 |
+
+This is the identical to the output of the **AND** gate: 
+| AND | 0 | 1 |
+| :---        |    :----:   |          ---: |
+| 0 | 0 | 0 |
+| 1 | 0 | 1 |
+
+Next for the sum bit which turns out to be not quite straightforward as the carry bit: 
+| +sum | 0 | 1 |
+| :---        |    :----:   |          ---: |
+| 0 | 0 | 0 |
+| 1 | 1 | 0 |
+
+**OR** and **NAND** logic gates are close what we want to except for sum bit case. So let's connect both an **OR** gate and **NAND** to the same inputs:
+
+<img src="/Users/jon/Workspace/Autonomic-Architecture/Computer-Architecture-Fundamentals-Course/Lesson-6-Designing-a-4bit-Adder-and-Subtractor/assets/or_nand.png" width="200" height="100">
 
 
 
