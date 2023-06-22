@@ -76,8 +76,6 @@ Here's how the process works:
 By combining the results from the two **Half Adders** and the **OR** gate, we can accurately add three binary numbers. And instead of drawing that diagram, we can just call it *Full Adder*: 
 
 <img src="assets/full_adder.png" width="200" height="100">
-<<<<<<< Updated upstream
-=======
 
 Here's a table representing the truth table for a Full Adder, which combines two Half Adders and an OR gate to accurately add three binary numbers:
 |  A  |  B  | Cin | Sum | Cout |
@@ -96,4 +94,3 @@ In this table, the inputs A and B represent the two bits being added, while Cin 
 ## 4-bit Adder 
 
 The table that we provided represents a truth table for a 1-bit adder. To present a 4-bit adder, we would need to extand the structure to include inputs and outputs for each bit position(A[3:0], B[3:0]) and their corresponding sum bits (Sum[3:0]) and carry-out(Cout).
->>>>>>> Stashed changes
