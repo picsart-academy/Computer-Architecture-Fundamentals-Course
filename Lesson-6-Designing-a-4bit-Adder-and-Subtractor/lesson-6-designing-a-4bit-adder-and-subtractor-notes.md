@@ -22,9 +22,10 @@ When adding decimal numbers, we typically rely on a more complex addition table 
 
 We add two binary numbers column by column beginning with the rightmost column:
 
+<div style="border-bottom: solid 2px black; width: fit-content; padding-bottom: 2px">
 <div style="text-indent: 13px"> 01100101</div>
 <div>+  10110110</div>
--------------
+</div>
 <div style="margin-left: 5px; padding-top: 2px">100011011</div> 
 
 There is a connection between logic gates and binary addition. Let's look at the table of the carry bit:
