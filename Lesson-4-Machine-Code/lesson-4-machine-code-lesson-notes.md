@@ -1,6 +1,6 @@
 # Lesson 4 - Machine Code 
 
-## Owners, group members, and everybody else
+## Machine Code 
 
 Machine code, also known as machine language, is the elemental language of computers. It is read by the computer's central processing unit (CPU), is composed of digital binary numbers and looks like a very long sequence of zeros and ones.
 
