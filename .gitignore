@@ -3,3 +3,5 @@
 .git-commands
 .my-tasks
 **/*.bak
+**/~*.*
+**/*.tmp

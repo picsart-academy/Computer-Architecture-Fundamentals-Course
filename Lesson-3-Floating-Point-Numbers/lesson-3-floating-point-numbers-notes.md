@@ -1,1 +1,1 @@
-# Lesson 3 Floating Point Numbers
+# Lesson 3. Floating Point Numbers
