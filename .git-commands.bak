@@ -1,0 +1,22 @@
+git pull                                        - getting last update from GitHub
+git push                                        - sending commited data to GitHub
+git push --set-upstream origin [branch name]    - sending commited data to GitHub from branch
+git add .                                       - add all changes for commit
+git add [file name/path]                        - add current file changes for commit
+git commit                                      - commiting added changes (prompt comment window)
+git commit -m "commit message"                  - immediately creates a commit with a passed commit message
+git status                                      - checking project files status
+git checkout [branch name]                      - select/activate branch with [branch name] name
+git checkout -b [branch name]                   - cteate/activate branch with [branch name] name
+git fetch                                       - Fetch branches and/or tags (collectively, "refs") from one or more other repositories, 
+                                                  along with the objects necessary to complete their histories.
+git stash                                       - need to run after [git add .], to create virtual branch, to save local changes
+git stash pop                                   - Popping your stash removes the changes from your stash and reapplies them to your working copy.
+--- for branches cross merging ---
+1. git add .
+2. git stash
+3. git checkout main 
+4. git pull
+5. git checkout -b [new branch]
+6. git stash pop
+--- for branches cross merging ---
