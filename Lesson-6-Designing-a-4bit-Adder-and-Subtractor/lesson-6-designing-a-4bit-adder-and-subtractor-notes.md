@@ -22,7 +22,7 @@ When adding decimal numbers, we typically rely on a more complex addition table 
 
 We add two binary numbers column by column beginning with the rightmost column:
 
-<div style="border-bottom: 2px solid black; width:fit-content; padding-bottom: 2px">
+<div style="width:fit-content; padding-bottom: 2px">
 <div style="text-indent: 13px"> 01100101</div>
 <div>+  10110110</div>
 </div>
