@@ -6,10 +6,10 @@ Addition is a fundamental arithmetic operation that serves as the building block
 
 When adding decimal numbers, we typically rely on a more complex addition table that accounts for all possible combinations of digits from 0 to 9. However, when adding binary numbers, we only need a much simpler table that accounts for the two possible digits: 0 and 1. This binary addition table is easier to memorize and work with, as it has fewer entries and simpler rules for combining the digits.
 
-| + | 0 | 1 |
-| :---        |    :----:   |          ---: |
-| 0 | 0 | 1 |
-| 1 | 1 | 10 |
+|   +   |  0  |  1  |
+|:-----:|:---:|:---:|
+|   0   |  0  |  1  |
+|   1   |  1  | 10  |
 
 *0 plus 0 equals 0.*
 
@@ -29,22 +29,22 @@ We add two binary numbers column by column beginning with the rightmost column:
 <div style="margin-left: 5px; padding-top: 2px">100011011</div> 
 
 There is a connection between logic gates and binary addition. Let's look at the table of the carry bit:
-| carry | 0 | 1 |
-| :---        |    :----:   |          ---: |
-| 0 | 0 | 0 |
-| 1 | 0 | 1 |
+| carry |  0  |  1  |
+|:-----:|:---:|:---:|
+|   0   |  0  |  0  |
+|   1   |  0  |  1  |
 
 This is the identical to the output of the **AND** gate: 
-| AND | 0 | 1 |
-| :---        |    :----:   |          ---: |
-| 0 | 0 | 0 |
-| 1 | 0 | 1 |
+| AND |  0  |  1  |
+|:---:|:---:|:---:|
+|  0  |  0  |  0  |
+|  1  |  0  |  1  |
 
 Next for the sum bit which turns out to be not quite straightforward as the carry bit: 
-| +sum | 0 | 1 |
-| :---        |    :----:   |          ---: |
-| 0 | 0 | 0 |
-| 1 | 1 | 0 |
+| +sum |  0  |  1  |
+|:----:|:---:|:---:|
+|   0  |  0  |  0  |
+|   1  |  1  |  0  |
 
 **OR** and **NAND** logic gates are close what we want to except for sum bit case. So let's connect both an **OR** gate and **NAND** to the same inputs:
 
@@ -76,3 +76,24 @@ Here's how the process works:
 By combining the results from the two **Half Adders** and the **OR** gate, we can accurately add three binary numbers. And instead of drawing that diagram, we can just call it *Full Adder*: 
 
 <img src="assets/full_adder.png" width="200" height="100">
+<<<<<<< Updated upstream
+=======
+
+Here's a table representing the truth table for a Full Adder, which combines two Half Adders and an OR gate to accurately add three binary numbers:
+|  A  |  B  | Cin | Sum | Cout |
+|:---:|:---:|:---:|:---:|:----:|
+|  0  |  0  |  0  |  0  |   0  |
+|  0  |  0  |  1  |  1  |   0  |
+|  0  |  1  |  0  |  1  |   0  |
+|  0  |  1  |  1  |  0  |   1  |
+|  1  |  0  |  0  |  1  |   0  |
+|  1  |  0  |  1  |  0  |   1  |
+|  1  |  1  |  0  |  0  |   1  |
+|  1  |  1  |  1  |  1  |   1  |
+
+In this table, the inputs A and B represent the two bits being added, while Cin represents the carry input from the previous column. The outputs Sum represent the sum bit for the current column, and Cout represents the carry output to the next column. By evaluating the inputs A, B, and Cin according to this truth table, we can determine the corresponding outputs Sum and Cout, allowing us to accurately add three binary numbers using the Full Adder.
+
+## 4-bit Adder 
+
+The table that we provided represents a truth table for a 1-bit adder. To present a 4-bit adder, we would need to extand the structure to include inputs and outputs for each bit position(A[3:0], B[3:0]) and their corresponding sum bits (Sum[3:0]) and carry-out(Cout).
+>>>>>>> Stashed changes
