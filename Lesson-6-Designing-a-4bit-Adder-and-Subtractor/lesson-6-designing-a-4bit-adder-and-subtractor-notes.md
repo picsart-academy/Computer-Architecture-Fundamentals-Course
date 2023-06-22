@@ -64,7 +64,7 @@ The Half Adder, although useful for adding two binary numbers, does not account 
 
 To handle this situation, we use two **Half Adders** and an **OR** gate.
 
-<img src="assets/two_half_adders.png" width="200" height="100">
+<img src="assets/two_half_adders.png" width="300" height="100">
 
 Here's how the process works: 
 <ul>
