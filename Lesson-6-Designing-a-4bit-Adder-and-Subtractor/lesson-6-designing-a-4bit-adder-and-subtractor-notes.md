@@ -95,6 +95,6 @@ In this table, the inputs A and B represent the two bits being added, while Cin 
 
 The table that we provided represents a truth table for a 1-bit adder. To present a 4-bit adder, we would need to extand the structure to include inputs and outputs for each bit position(A[3:0], B[3:0]), their corresponding sum bits (S[3:0]) and carry-out(C[3:0]).
 
-<img src="assets/4_bit_adder.jpg" width="300" height="200">
+<img src="assets/4_bit_adder.jpg" width="350" height="200">
 
  The 4-bit Binary Adder is illustrated in the diagram below consists of three full adders and one half adder. The input of each full adder receives the corresponding bits 'A3 A2 A1 A0' and 'B3 B2 B1 B0', representing the two binary numbers to be added. The output of the adder is denoted as 'C4 S3 S2 S1 S0', with 'C4' representing the final carry and 'S3 S2 S1 S0' representing the resulting sum. The initial component is a half-adder that takes A0 and B0 as inputs and generates a sum output S0 along with a carry bit C1. Alternatively, the first component can be a full adder, but in that case, the input carry C0 must be set to 0. The subsequent three components in the adder are full adders, as they receive three inputs each. These inputs include two primary binary bits and a carry bit from the preceding stage. 
