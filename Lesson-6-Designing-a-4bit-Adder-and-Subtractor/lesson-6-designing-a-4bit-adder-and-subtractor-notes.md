@@ -2,9 +2,9 @@
 
 ## Addition
 
-Addition is a fundamental arithmetic operation that serves as the building block for computer systems. To construct a computer, it is crucial to understand how to create a mechanism that can add two numbers together.
+The process of addition is a fundamental arithmetic operation that forms the foundation of computer systems. In order to build a computer, it is essential to comprehend the creation of a mechanism capable of combining two numbers.
 
-When adding decimal numbers, we typically rely on a more complex addition table that accounts for all possible combinations of digits from 0 to 9. However, when adding binary numbers, we only need a much simpler table that accounts for the two possible digits: 0 and 1. This binary addition table is easier to memorize and work with, as it has fewer entries and simpler rules for combining the digits.
+When we perform addition with decimal numbers, we typically rely on a more intricate addition table that incorporates all conceivable combinations of digits ranging from 0 to 9. However, when adding binary numbers, a much simpler table suffices, considering there are only two possible digits: 0 and 1. Memorizing and working with this binary addition table is easier due to its reduced number of entries and simpler rules for combining the digits.
 
 |   +   |  0  |  1  |
 |:-----:|:---:|:---:|
@@ -93,4 +93,8 @@ In this table, the inputs A and B represent the two bits being added, while Cin 
 
 ## 4-bit Adder 
 
-The table that we provided represents a truth table for a 1-bit adder. To present a 4-bit adder, we would need to extand the structure to include inputs and outputs for each bit position(A[3:0], B[3:0]) and their corresponding sum bits (Sum[3:0]) and carry-out(Cout).
+The table that we provided represents a truth table for a 1-bit adder. To present a 4-bit adder, we would need to extand the structure to include inputs and outputs for each bit position(A[3:0], B[3:0]), their corresponding sum bits (S[3:0]) and carry-out(C[3:0]).
+
+<img src="assets/4_bit_adder.jpg" width="200" height="100">
+
+ The 4-bit Binary Adder is illustrated in the diagram below consists of three full adders and one half adder. The input of each full adder receives the corresponding bits 'A3 A2 A1 A0' and 'B3 B2 B1 B0', representing the two binary numbers to be added. The output of the adder is denoted as 'C4 S3 S2 S1 S0', with 'C4' representing the final carry and 'S3 S2 S1 S0' representing the resulting sum. The initial component is a half-adder that takes A0 and B0 as inputs and generates a sum output S0 along with a carry bit C1. Alternatively, the first component can be a full adder, but in that case, the input carry C0 must be set to 0. The subsequent three components in the adder are full adders, as they receive three inputs each. These inputs include two primary binary bits and a carry bit from the preceding stage. 
