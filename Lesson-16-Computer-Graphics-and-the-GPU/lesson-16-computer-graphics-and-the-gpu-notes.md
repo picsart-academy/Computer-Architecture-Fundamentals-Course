@@ -28,6 +28,17 @@ On the other hand, GPUs excel at parallel processing, which means they can perfo
 
 In short GPU is used to handle graphical data, which sometimes can be much enough, and to make CPU work on other instructions.
 
+## GPU Applications in Video data
+Videos are stored as a collection of frames, where each frame represents an individual image within the video. Similar to images, videos can be seen as a 2D grid or map of pixels arranged in rows and columns. Each pixel within a frame holds color or intensity information that contributes to the visual representation of the video.
+
+To create the illusion of motion, videos play back a sequence of frames at a specific rate called the frame rate. The frame rate determines how many frames are displayed per second. For instance, a video with a frame rate of 30 frames per second (FPS) will show 30 frames in succession every second, resulting in smooth motion.
+
+Video compression techniques are employed to reduce the storage space required for videos. These techniques take advantage of the fact that consecutive frames in a video often exhibit similarities or subtle differences. Instead of storing each frame independently, video compression algorithms encode the differences between frames or utilize other strategies to efficiently represent the video data.
+
+One widely used video compression standard is H.264 (also known as AVC). It incorporates temporal compression by analyzing consecutive frames and encoding only the variations between them. Spatial compression is also employed, leveraging redundancy within each frame to further reduce file size.
+
+By representing videos as a sequence of frames and applying compression techniques, video data can be stored, transmitted, and played back efficiently. This allows for smooth motion and high-quality visual content while optimizing storage space and transmission bandwidth.
+
 ### FPS: Frames Per Second
 
 FPS, or Frames Per Second, is a measurement used to determine the smoothness of motion in videos, animations, and games. It represents the number of frames, or individual images, that are displayed or rendered per second. The higher the FPS, the smoother the motion appears to the viewer.
