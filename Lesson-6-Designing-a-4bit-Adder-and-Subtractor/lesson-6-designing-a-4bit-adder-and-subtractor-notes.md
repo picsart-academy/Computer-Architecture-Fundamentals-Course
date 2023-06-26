@@ -98,3 +98,137 @@ The table that we provided represents a truth table for a 1-bit adder. To presen
 <img src="assets/4_bit_adder.jpg" width="350" height="200">
 
  The 4-bit Binary Adder is illustrated in the diagram below consists of three full adders and one half adder. The input of each full adder receives the corresponding bits 'A3 A2 A1 A0' and 'B3 B2 B1 B0', representing the two binary numbers to be added. The output of the adder is denoted as 'C4 S3 S2 S1 S0', with 'C4' representing the final carry and 'S3 S2 S1 S0' representing the resulting sum. The initial component is a half-adder that takes A0 and B0 as inputs and generates a sum output S0 along with a carry bit C1. Alternatively, the first component can be a full adder, but in that case, the input carry C0 must be set to 0. The subsequent three components in the adder are full adders, as they receive three inputs each. These inputs include two primary binary bits and a carry bit from the preceding stage. 
+
+
+## Subtraction 
+
+Although addition and subtraction have some similarities, they operate in different ways. From the rightmost digit column to the leftmost column, addition proceeds progressively. The following column receives each carry from the previous one. We do not carry digits in subtraction like we do in addition. Instead, we use a fundamentally different approach to borrow from higher digits. In comparison to addition, this borrowing process can be thought of as an ongoing cycle that builds complexity. Let's perform the action shown in the figure.
+
+<div style="border-bottom: solid 2px black; width: fit-content; padding-bottom: 2px">
+<div style="text-indent: 8px">345</div>
+<div>- 178</div>
+</div>
+<div style="margin-left: 11px; padding-top: 2px">167</div> 
+
+We start with the rightmost column to accomplish this. First, we observe that 8 is larger than 5, thus we must borrow 1 from 4 before deducting 8 from 15 to arrive at 7. Then, we must keep in mind that we subtracted 1 from the 4, making the result really a 3, which is smaller than 7, so we borrow 1 from the 3, subtracting 7 from 13, which equals 6, and continuing. Then we must keep in mind that we borrowed 1 from the 3, making it actually a 2, from which we deduct 1 to get 1. Our response is 178.
+
+Applying a similar approach using logic gates would be very complicated and unclear.Instead, we are going to use a little trick that lets us subtract without borrowing. We must make reference to the two numbers being subtracted in order to explain this. The minuend and the subtrahend are their formal names. The difference is calculated by subtracting the subtrahend from the minuend.
+
+<div style="border-bottom: solid 2px black; width: fit-content; padding-bottom: 2px">
+<div style="text-indent: 12px">Minuend</div>
+<div>- Subtrahend</div>
+</div>
+<div style="margin-left: 11px; padding-top: 2px">Difference</div> 
+
+To subtract without borrowing, we first subtract the **subtrahend** not from the **minuend** but from 999:
+
+<div style="border-bottom: solid 2px black; width: fit-content; padding-bottom: 2px">
+<div style="text-indent: 8px">999</div>
+<div>- 178</div>
+</div>
+<div style="margin-left: 11px; padding-top: 2px">821</div> 
+
+Since the numbers have three digits, we use 999. We would use 9999 if the numbers were 4 digits instead. The nines' complement is the result of deducting a number from a string of nines. The complement of the nines, 178, is 821. It also operates in reverse: There are 178 nines in the complement of 821. What's nice is that calculating the nines' completion never necessitates borrowing, regardless of the subtrahend. After we've calculated nines' complement of the subtrahend, we add it to original minuend: 
+
+<div style="border-bottom: solid 2px black; width: fit-content; padding-bottom: 2px">
+<div style="text-indent: 13px">345</div>
+<div>+ 821</div>
+</div>
+<div style="margin-left: 11px; padding-top: 2px">1166</div> 
+
+And finally we add 1 and subract 1000: 
+
+<div style="border-bottom: solid 2px black; width: fit-content; padding-bottom: 2px">
+<div style="text-indent: 13px">1166</div>
+<div>+ &emsp;&ensp;1</div>
+<div>- 1000</div>
+</div>
+<div style="margin-left: 11px; padding-top: 2px">167</div> 
+
+The result is the same as before when we made with borrow. The expression can have any number added to and subtracted from it, and the outcome will always be the same. So let's add 1000 subtract 1000:
+
+"345 - 178 + 1000 - 1000" this expression is equivalent to "345 + (999 - 178) + 1 - 1000".
+The operations with binary numbers are the same as we did with decimal. 
+
+
+<div style="border-bottom: solid 2px black; width: fit-content; padding-bottom: 2px">
+<div style="text-indent: 3px">101011001</div>
+<div>- 10110010</div>
+</div>
+<div style="margin-left: 11px; padding-top: 2px">10100111</div> 
+
+As in decimal subtraction, we can do the subtrahend from 111111111 (which equals 511): 
+
+<div style="border-bottom: solid 2px black; width: fit-content; padding-bottom: 2px">
+<div style="text-indent: 13px">111111111</div>
+<div>- 10110010</div>
+</div>
+<div style="margin-left: 11px; padding-top: 2px">101001101</div> 
+
+When dealing with decimal numbers, we used to subtract the subtrahend from a sequence of nines, resulting in what was known as the nines' complement. In the case of binary numbers, the subtrahend is subtracted from a sequence of ones, yielding the ones' complement. Interestingly, calculating the ones' complement doesn't necessarily require performing an actual subtraction operation. This is because every 0 bit in the original number transforms into a 1 bit in the ones' complement, while every 1 bit converts to a 0 bit. Consequently, the ones' complement is sometimes referred to as the negation or the inverse. 
+
+Second step: we should add the ones' complement of the subtrahend to minuend: 
+
+<div style="border-bottom: solid 2px black; width: fit-content; padding-bottom: 2px">
+<div style="text-indent: 13px">101011001</div>
+<div>+ 101001101</div>
+</div>
+<div style="margin-left: 11px; padding-top: 2px">1010100110</div> 
+
+Third step: add 1 to the result 
+
+<div style="border-bottom: solid 2px black; width: fit-content; padding-bottom: 2px">
+<div style="text-indent: 13px">1010100110</div>
+<div>+ &emsp;&emsp;&emsp;&emsp;&ensp; 1</div>
+<div style="margin-left: 11px; padding-top: 2px">1010100111</div> 
+
+Last step: subtract 111111111 (which equals 511):
+
+<div style="border-bottom: solid 2px black; width: fit-content; padding-bottom: 2px">
+<div style="text-indent: 13px">1010100111</div>
+<div>- 100000000</div>
+</div>
+<div style="margin-left: 11px; padding-top: 2px">10100111</div> 
+
+The result is equivalent to 167 in decimal.(notice that this time a 0 is added to the beginning of the minuend). 
+
+Similar to the adder circuits, basic substraction circuits are also of two types:
+<ul>
+  <li>Half Subtractor</li>
+  <li>Full Subtractor</li>
+</ul>
+
+A Half Subtractor is a type of logic circuit used for subtracting two 1-bit binary numbers. It has two inputs and two outputs. The inputs represent the two 1-bit binary numbers being subtracted, while the outputs represent the resulting difference and borrow. This is in contrast to a Half Adder, which produces a sum and carry output.
+
+The table below displays the truth table for a Half Subtractor. 
+
+<div style="width: 100%">
+  <table>
+    <tbody>
+      <tr >
+        <td colspan=2 style="text-align: center; width: 150px" >
+          <strong>Input</strong>
+        </td>
+        <td colspan=2 style="text-align: center; width: 150px">
+          <strong>Output</strong>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center; width: 75px">
+          <strong>A</strong>
+        </td>
+        <td style="text-align: center; width: 75px">
+          <strong>B</strong>
+        </td>
+        <td style="text-align: center; width: 75px">
+          <strong>Difference</strong>
+        </td>
+        <td style="text-align: center; width: 75px">
+          <strong>Borrow</strong>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div >
+
