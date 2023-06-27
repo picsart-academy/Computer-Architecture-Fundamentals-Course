@@ -1,5 +1,7 @@
 # Lesson 11 - SRAM, DRAM, and the Cache Memory
 
+<img src="assets/img.png">  
+
 *SRAM* and *DRAM* are two different types of computer memory technologies commonly used in modern computing systems. Here's a brief overview of each:
 
 
